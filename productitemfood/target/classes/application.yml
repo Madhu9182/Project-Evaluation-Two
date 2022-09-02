@@ -1,0 +1,28 @@
+server:
+  port: 5010
+
+spring:
+  application:
+    name: Food-Order
+  cloud:
+    discovery:
+      enabled: true
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    name: fooditem
+    password: root
+    url: jdbc:postgresql://localhost:5432/fooditem
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
